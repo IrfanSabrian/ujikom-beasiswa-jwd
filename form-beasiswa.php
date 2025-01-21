@@ -106,16 +106,16 @@ function SetDisable($ipk)
 
       <form action="backend/process-registration.php" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
         <div class="mb-3 row">
-          <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+          <label for="inputNama" class="col-sm-3 col-form-label">Nama Lengkap</label>
           <div class="col-sm-9">
-            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Masukkan email anda" required>
+            <input type="text" class="form-control w-100" id="inputNama" name="nama" placeholder="Masukkan nama lengkap" required>
           </div>
         </div>
 
         <div class="mb-3 row">
-          <label for="inputNama" class="col-sm-3 col-form-label">Nama Lengkap</label>
+          <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control w-100" id="inputNama" name="nama" placeholder="Masukkan nama lengkap" required>
+            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Masukkan email anda" required>
           </div>
         </div>
 
@@ -240,6 +240,7 @@ function SetDisable($ipk)
       var beasiswaSelect = document.getElementById("beasiswa");
       var berkasInput = document.getElementById("customfile");
       var daftarButton = document.getElementById("tombolDaftar");
+      var namaInput = document.getElementById("inputNama");
 
       if (ipk < 3) {
         beasiswaSelect.disabled = true;
@@ -252,7 +253,15 @@ function SetDisable($ipk)
         berkasInput.disabled = false;
         daftarButton.disabled = false;
       }
+      
+      // Pastikan input nama selalu enabled
+      namaInput.disabled = false;
     });
+
+    // Pastikan input nama selalu enabled saat halaman dimuat
+    window.onload = function() {
+      document.getElementById("inputNama").disabled = false;
+    }
   </script>
 </body>
 

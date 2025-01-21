@@ -1,7 +1,7 @@
 $(document).ready(function () {
-  // Menonaktifkan semua input kecuali email saat pertama kali
+  // Menonaktifkan semua input kecuali email dan nama saat pertama kali
   $(
-    "#inputNama, #hp, #semester, #inputIpk, #beasiswa, #customfile, #tombolDaftar"
+    "#hp, #semester, #inputIpk, #beasiswa, #customfile, #tombolDaftar"
   ).prop("disabled", true);
 
   $("#inputEmail").change(function () {
@@ -9,17 +9,16 @@ $(document).ready(function () {
 
     // Menggunakan AJAX untuk mengambil data dari database
     $.ajax({
-      url: "backend/get_email_data.php",
+      url: "backend/get_email_data.php", 
       method: "GET",
       data: { email: email },
       dataType: "json",
       success: function (data) {
         if (data) {
-          // Enable semua input kecuali IPK
-          $("#inputNama, #hp, #semester").prop("disabled", false);
+          // Enable input kecuali IPK
+          $("#hp, #semester").prop("disabled", false);
 
-          // Mengisi data nama dan IPK
-          $("#inputNama").val(data.nama);
+          // Mengisi data IPK
           $("#inputIpk").val(data.ipk);
 
           if (data.ipk < 3) {
@@ -31,21 +30,21 @@ $(document).ready(function () {
         } else {
           // Jika email tidak dikenali
           $("#WarningModal").modal("show");
-          // Menonaktifkan semua input kecuali email
+          // Menonaktifkan semua input kecuali email dan nama
           $(
-            "#inputNama, #hp, #semester, #inputIpk, #beasiswa, #customfile, #tombolDaftar"
+            "#hp, #semester, #inputIpk, #beasiswa, #customfile, #tombolDaftar"
           ).prop("disabled", true);
           // Mengosongkan nilai input
-          $("#inputNama, #inputIpk").val("");
+          $("#inputIpk").val("");
         }
       },
       error: function () {
         $("#WarningModal").modal("show");
         // Menonaktifkan dan mengosongkan input saat terjadi error
         $(
-          "#inputNama, #hp, #semester, #inputIpk, #beasiswa, #customfile, #tombolDaftar"
+          "#hp, #semester, #inputIpk, #beasiswa, #customfile, #tombolDaftar"
         ).prop("disabled", true);
-        $("#inputNama, #inputIpk").val("");
+        $("#inputIpk").val("");
       },
     });
   });
