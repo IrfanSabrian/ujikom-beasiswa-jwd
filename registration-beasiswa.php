@@ -28,8 +28,8 @@ while ($data_mahasiswa = mysqli_fetch_array($hasil)) {
 // Menyiapkan data untuk grafik
 $label_semester = json_encode(array_keys($jumlah_per_semester));
 $data_semester = json_encode(array_values($jumlah_per_semester));
-$label_beasiswa = json_encode(['Akademik', 'Non-Akademik']);
-$data_beasiswa = json_encode([$jumlah_akademik, $jumlah_non_akademik]);
+$label_beasiswa = json_encode(['Pilih Beasiswa', 'Akademik', 'Non-Akademik']);
+$data_beasiswa = json_encode([0, $jumlah_akademik, $jumlah_non_akademik]);
 
 // Reset
 mysqli_data_seek($hasil, 0);
