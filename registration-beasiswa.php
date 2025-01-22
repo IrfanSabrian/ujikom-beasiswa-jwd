@@ -393,19 +393,19 @@ mysqli_data_seek($hasil, 0);
   </script>
 
   <!-- Tambahkan Modal di akhir body sebelum closing tag -->
-  <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="confirmationModalLabel">Konfirmasi Verifikasi</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" onclick="modal.hide()" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           Apakah Anda yakin ingin memverifikasi mahasiswa ini?
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-          <button type="button" class="btn btn-primary" id="confirmVerify">Ya, Verifikasi</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="modal.hide()">Batal</button>
+          <button type="button" class="btn btn-primary" id="confirmVerify" onclick="modal.hide()">Ya, Verifikasi</button>
         </div>
       </div>
     </div>

@@ -13,27 +13,40 @@ if ($_POST) {
         $email = $_POST['email'];
         $hp = $_POST['hp'];
         $semester = $_POST['semester'];
-        $ipk = $_POST['ipk'];
         $beasiswa = $_POST['beasiswa'];
         $status = "Belum Diverifikasi";
         $berkas = $file_upload['name'];
 
-        // Menyimpan data ke database
-        $result = mysqli_query($conn, "INSERT INTO daftar_mahasiswa(nama, email, hp, semester, ipk, beasiswa, berkas, status) 
-                                       VALUES('$nama', '$email', '$hp', '$semester', '$ipk', '$beasiswa', '$berkas', '$status')");
-        // Memeriksa apakah penyimpanan data berhasil
-        if ($result) {
-            // Menentukan lokasi penyimpanan file
+        // Mengambil IPK dari tabel email_terverifikasi
+        $query_ipk = "SELECT ipk FROM email_terverifikasi WHERE email = ?";
+        $stmt = mysqli_prepare($conn, $query_ipk);
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        $result_ipk = mysqli_stmt_get_result($stmt);
 
-            $upload_path = dirname(__DIR__) . "/uploads/" . $berkas;
-            // Memindahkan file yang diupload ke lokasi penyimpanan
-            move_uploaded_file($file_upload['tmp_name'], $upload_path);
-            // Redirect ke halaman hasil pendaftaran
-            header("Location: ../registration-beasiswa.php");
-            exit();
+        if ($row = mysqli_fetch_assoc($result_ipk)) {
+            $ipk = $row['ipk'];
+
+            // Menyimpan data ke database dengan IPK yang benar
+            $insert_query = "INSERT INTO daftar_mahasiswa(nama, email, hp, semester, ipk, beasiswa, berkas, status) 
+                           VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt_insert = mysqli_prepare($conn, $insert_query);
+            mysqli_stmt_bind_param($stmt_insert, "sssissss", $nama, $email, $hp, $semester, $ipk, $beasiswa, $berkas, $status);
+
+            if (mysqli_stmt_execute($stmt_insert)) {
+                // Menentukan lokasi penyimpanan file
+                $upload_path = dirname(__DIR__) . "/uploads/" . $berkas;
+                // Memindahkan file yang diupload ke lokasi penyimpanan
+                move_uploaded_file($file_upload['tmp_name'], $upload_path);
+                // Redirect ke halaman hasil pendaftaran
+                header("Location: ../registration-beasiswa.php");
+                exit();
+            } else {
+                // Menampilkan pesan error jika penyimpanan data gagal
+                echo "Error: " . mysqli_error($conn);
+            }
         } else {
-            // Menampilkan pesan error jika penyimpanan data gagal
-            echo "Error: " . mysqli_error($conn);
+            echo "Email tidak terverifikasi";
         }
     }
 }

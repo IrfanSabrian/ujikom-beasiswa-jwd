@@ -202,11 +202,6 @@ function SetDisable($ipk)
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
   <script src="js/function-form.js"></script>
   <script>
-    // Fungsi untuk menghasilkan IPK acak
-    function generateIPK() {
-      return (Math.random() * (4.00 - 2.00) + 2.00).toFixed(2);
-    }
-
     // Fungsi untuk memvalidasi form
     function validateForm() {
       var email = document.getElementById("inputEmail").value;
@@ -232,30 +227,9 @@ function SetDisable($ipk)
       }
     }
 
-    // Event listener untuk semester
+    // Event listener untuk semester - tidak perlu generate IPK random
     document.getElementById("semester").addEventListener("change", function() {
-      var ipk = generateIPK();
-      document.getElementById("inputIpk").value = ipk;
-
-      var beasiswaSelect = document.getElementById("beasiswa");
-      var berkasInput = document.getElementById("customfile");
-      var daftarButton = document.getElementById("tombolDaftar");
-      var namaInput = document.getElementById("inputNama");
-
-      if (ipk < 3) {
-        beasiswaSelect.disabled = true;
-        berkasInput.disabled = true;
-        daftarButton.disabled = true;
-        var warningModal = new bootstrap.Modal(document.getElementById('warningModal'));
-        warningModal.show();
-      } else {
-        beasiswaSelect.disabled = false;
-        berkasInput.disabled = false;
-        daftarButton.disabled = false;
-      }
-      
-      // Pastikan input nama selalu enabled
-      namaInput.disabled = false;
+      validateSelect(this);
     });
 
     // Pastikan input nama selalu enabled saat halaman dimuat
