@@ -38,36 +38,17 @@ function SetDisable($ipk)
         <i class="fas fa-graduation-cap me-2"></i>
         Portal Beasiswa JWD Ujikom
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.php">
-              <i class="fas fa-home me-1"></i> Beranda
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active fw-bold" href="form-beasiswa.php">
-              <i class="fas fa-edit me-1"></i> Daftar
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="registration-beasiswa.php">
-              <i class="fas fa-list-alt me-1"></i> Hasil
-            </a>
-          </li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Container utama -->
-  <div class="container py-4">
+  <div class="container py-5">
     <div class="bg-white rounded-4 shadow-sm p-4">
       <h4 class="mb-4 text-primary">Form Pendaftaran Beasiswa</h4>
-
       <!-- Warning Modal untuk IPK -->
       <div class="modal fade" id="warningModal" tabindex="-1" aria-labelledby="warningModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -122,7 +103,13 @@ function SetDisable($ipk)
         <div class="mb-3 row">
           <label for="hp" class="col-sm-3 col-form-label">Nomor HP</label>
           <div class="col-sm-9">
-            <input type="number" class="form-control" id="hp" name="hp" placeholder="Masukkan nomor HP" required>
+            <div class="input-group" style="height: 38px;">
+              <span class="input-group-text h-100">+62</span>
+              <input type="number" class="form-control h-100" id="hp" name="hp"
+                placeholder="Masukkan nomor HP (tanpa angka 0 di depan)"
+                required
+                oninput="javascript: if (this.value.length > 12) this.value = this.value.slice(0, 12)">
+            </div>
           </div>
         </div>
 

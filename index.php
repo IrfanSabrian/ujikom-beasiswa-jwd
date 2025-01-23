@@ -19,79 +19,20 @@
         <i class="fas fa-graduation-cap me-2"></i>
         Portal Beasiswa JWD Ujikom
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active fw-bold' : ''; ?>" href="index.php">
-              <i class="fas fa-home me-1"></i> Beranda
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'form-beasiswa.php' ? 'active fw-bold' : ''; ?>" href="form-beasiswa.php">
-              <i class="fas fa-edit me-1"></i> Daftar
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'registration-beasiswa.php' ? 'active fw-bold' : ''; ?>" href="registration-beasiswa.php">
-              <i class="fas fa-list-alt me-1"></i> Hasil
-            </a>
-          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Container utama dengan padding top -->
-  <div class="container py-4">
-    <div class="bg-white rounded-4 shadow-sm p-4">
-      <!-- Konten halaman -->
-      <div class="section-menu">
-        <h3 class="mb-4 text-primary">Jenis Beasiswa</h3>
-        <p>Beasiswa kuliah merupakan bantuan biaya pendidikan yang diberikan kepada mahasiswa berprestasi atau yang membutuhkan, agar mereka dapat melanjutkan studi ke jenjang yang lebih tinggi. Ada berbagai jenis beasiswa dengan persyaratan yang berbeda-beda.
-        </p>
-        <ul>
-          <!-- Beasiswa Akademik -->
-          <li>
-            <h5>Beasiswa Akademik</h5>
-            <p>Beasiswa akademik diberikan kepada mahasiswa yang memiliki prestasi akademik yang sangat baik. Biasanya, persyaratan yang harus dipenuhi adalah:</p>
-            <ul>
-              <li>
-                <span>Transkrip nilai: Bukti perolehan nilai yang tinggi selama menempuh pendidikan sebelumnya.</span>
-              </li>
-              <li>
-                <span>Pas foto: Foto terbaru dengan ukuran sesuai ketentuan.</span>
-              </li>
-              <li>
-                <span>Surat keterangan prestasi akademik: Dokumen resmi yang menyatakan prestasi akademik yang pernah diraih, misalnya peringkat kelas, juara olimpiade, atau publikasi ilmiah.</span>
-              </li>
-            </ul>
-            <a class="btn btn-primary my-large-btn my-2" href="form-beasiswa.php?jenis_beasiswa=akademik">Daftar Sekarang</a>
-          </li>
-          <hr />
-          <!-- Beasiswa Non Akademik -->
-          <li>
-            <h5>Beasiswa Non Akademik</h5>
-            <p>Beasiswa non-akademik diberikan kepada mahasiswa yang memiliki prestasi di bidang di luar akademik, seperti olahraga, seni, atau kegiatan sosial. Persyaratan yang umumnya dibutuhkan adalah: </p>
-            <ul>
-              <li>
-                <span>Transkrip nilai: Sebagai bukti bahwa calon penerima beasiswa juga memiliki kemampuan akademik yang memadai.</span>
-              </li>
-              <li>
-                <span>Pas foto: Foto terbaru dengan ukuran sesuai ketentuan.</span>
-              </li>
-              <li>
-                <span>Bukti prestasi non-akademik: Dokumen yang menunjukkan prestasi di bidang non-akademik, misalnya sertifikat kejuaraan, portofolio karya seni, atau surat rekomendasi dari pembina kegiatan.</span>
-              </li>
-              <li>
-                <span>Surat Keterangan Tidak Mampu (SKTM): Bagi calon penerima beasiswa yang berasal dari keluarga kurang mampu, SKTM dapat menjadi salah satu persyaratan yang wajib dipenuhi. </span>
-              </li>
-            </ul>
-            <a class="btn btn-primary my-large-btn my-2" href="form-beasiswa.php?jenis_beasiswa=non_akademik">Daftar Sekarang</a>
-          </li>
-        </ul>
+  <!-- Container utama dengan full height -->
+  <div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: 85vh;">
+    <div class="text-center text-white">
+      <h1 class="display-1 fw-bold mb-4">Selamat Datang</h1>
+      <p class="lead mb-4" style="font-size: 1.5rem;">Portal Beasiswa JWD Ujikom adalah platform yang menyediakan informasi dan pendaftaran beasiswa untuk mahasiswa.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="form-beasiswa.php" class="btn btn-light btn-lg px-5 py-3">Daftar Sekarang</a>
       </div>
     </div>
   </div>
