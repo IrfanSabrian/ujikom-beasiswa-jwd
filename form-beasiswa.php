@@ -2,7 +2,7 @@
 include_once("connection.php");
 $result = mysqli_query($conn, "SELECT * FROM daftar_mahasiswa");
 
-// Mengambil jenis beasiswa dari parameter URL, default ke "Pilih Beasiswa" jika tidak ada
+// Mengambil jenis beasiswa dari parameter URL, default ke "Pilih Beasiswa"
 $jenis_beasiswa = isset($_GET['jenis_beasiswa']) ? $_GET['jenis_beasiswa'] : "Pilih Beasiswa";
 
 // Fungsi untuk menandai opsi beasiswa yang dipilih
@@ -31,7 +31,6 @@ function SetDisable($ipk)
 </head>
 
 <body>
-  <!-- Navbar modern -->
   <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold text-primary" href="index.php">
@@ -45,7 +44,6 @@ function SetDisable($ipk)
     </div>
   </nav>
 
-  <!-- Container utama -->
   <div class="container py-5">
     <div class="bg-white rounded-4 shadow-sm p-4">
       <h4 class="mb-4 text-primary">Form Pendaftaran Beasiswa</h4>
@@ -106,7 +104,7 @@ function SetDisable($ipk)
             <div class="input-group" style="height: 38px;">
               <span class="input-group-text h-100">+62</span>
               <input type="number" class="form-control h-100" id="hp" name="hp"
-                placeholder="Masukkan nomor HP (tanpa angka 0 di depan)"
+                placeholder="Masukkan Nomor HP" placeholder="Masukkan Nomor HP"
                 required
                 oninput="javascript: if (this.value.length > 12) this.value = this.value.slice(0, 12)">
             </div>
@@ -164,7 +162,7 @@ function SetDisable($ipk)
     </div>
   </div>
 
-  <footer class="bg-primary text-white py-4 mt-5">
+  <footer class="bg-dark text-white py-4 mt-5">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -175,13 +173,13 @@ function SetDisable($ipk)
           <div class="d-flex flex-column">
             <p class="mb-1 fw-bold">Dikembangkan oleh:</p>
             <p class="mb-1">Irfan Sabrian</p>
-            <p class="mb-0 text-light">NIM: 3202216097</p>
+            <p class="mb-0 text-white">NIM: 3202216097</p>
           </div>
         </div>
       </div>
     </div>
   </footer>
-
+  
   <!-- Scripts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="js/jquery.js"></script>

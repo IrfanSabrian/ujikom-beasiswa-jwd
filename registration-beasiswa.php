@@ -218,7 +218,7 @@ mysqli_data_seek($hasil, 0);
     </div>
   <?php } ?>
 
-  <footer class="bg-primary text-white py-4 mt-5">
+  <footer class="bg-dark text-white py-4 mt-5">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -229,7 +229,7 @@ mysqli_data_seek($hasil, 0);
           <div class="d-flex flex-column">
             <p class="mb-1 fw-bold">Dikembangkan oleh:</p>
             <p class="mb-1">Irfan Sabrian</p>
-            <p class="mb-0 text-light">NIM: 3202216097</p>
+            <p class="mb-0 text-white">NIM: 3202216097</p>
           </div>
         </div>
       </div>
