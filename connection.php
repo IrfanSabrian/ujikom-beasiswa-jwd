@@ -6,4 +6,8 @@ $password = "";
 $database = "ujikom_jwd";
 
 // Membuat koneksi ke database
-$conn = mysqli_connect($hostname, $username, $password, $database);
+$conn = mysqli_connect(
+    $hostname,
+    $username, 
+    $password, 
+    $database);
