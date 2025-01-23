@@ -31,7 +31,13 @@ if ($_POST) {
             $insert_query = "INSERT INTO daftar_mahasiswa(nama, email, hp, semester, ipk, beasiswa, berkas, status) 
                            VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt_insert = mysqli_prepare($conn, $insert_query);
-            mysqli_stmt_bind_param($stmt_insert, "sssissss", $nama, $email, $hp, $semester, $ipk, $beasiswa, $berkas, $status);
+            // s = string, i = integer
+            // Parameter binding: nama(s), email(s), hp(s), semester(i), ipk(s), beasiswa(s), berkas(s), status(s)
+            mysqli_stmt_bind_param(
+                $stmt_insert, 
+                "sssissss", 
+                $nama, 
+                $email, $hp, $semester, $ipk, $beasiswa, $berkas, $status);
 
             if (mysqli_stmt_execute($stmt_insert)) {
                 // Menentukan lokasi penyimpanan file
