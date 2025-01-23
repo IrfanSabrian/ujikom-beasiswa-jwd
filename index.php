@@ -28,7 +28,8 @@
   <div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: 85vh;">
     <div class="text-center text-white">
       <h1 class="display-1 fw-bold mb-4">Selamat Datang</h1>
-      <p class="lead mb-4" style="font-size: 1.5rem; font-display: swap;">Portal Beasiswa JWD Ujikom adalah platform yang menyediakan informasi dan pendaftaran beasiswa untuk mahasiswa.</p>
+      <p class="lead mb-4" style="font-size: 1.5rem; font-display: swap;">
+        Portal Beasiswa JWD Ujikom adalah platform yang menyediakan informasi dan pendaftaran beasiswa untuk mahasiswa.</p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         <a href="form-beasiswa.php" class="btn btn-light btn-lg px-5 py-3">Daftar Sekarang</a>
       </div>
