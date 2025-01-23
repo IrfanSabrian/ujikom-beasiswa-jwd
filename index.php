@@ -6,7 +6,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+  rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <title>Beasiswa</title>
 </head>
@@ -25,7 +26,8 @@
     </div>
   </nav>
 
-  <div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: 85vh;">
+  <div class="container-fluid d-flex align-items-center justify-content-center" 
+  style="min-height: 85vh;">
     <div class="text-center text-white">
       <h1 class="display-1 fw-bold mb-4">Selamat Datang</h1>
       <p class="lead mb-4" style="font-size: 1.5rem; font-display: swap;">
