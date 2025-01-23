@@ -50,7 +50,7 @@ mysqli_data_seek($hasil, 0);
       <div class="col-lg-8">
         <!-- Card pendaftaran -->
         <div class="bg-white rounded-4 shadow-sm p-4">
-          <div class="text-center mb-4">
+          <div class="text-center">
             <h4 class="text-primary">Data Pendaftaran Berhasil</h4>
           </div>
 
@@ -61,7 +61,7 @@ mysqli_data_seek($hasil, 0);
 
           if ($data_mahasiswa) { ?>
             <!-- Status Pendaftaran -->
-            <div class="text-center mb-4">
+            <div class="text-center mb-2">
               <?php
               $status = $data_mahasiswa['status'];
               if ($status == 'Diverifikasi') {
